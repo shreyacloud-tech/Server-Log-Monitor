@@ -1,247 +1,282 @@
-# System Health Monitor
+# 🖥️ Server Log Monitor
+
+A Python-based **Server Log Monitoring System** that reads and analyzes server log files from the command line.
+
+This project demonstrates practical Python programming, file handling, log analysis, Git/GitHub, Docker containerization, and GitHub Actions CI.
+
+---
 
 ## 📌 Project Overview
 
-System Health Monitor is a Python-based command-line monitoring application that checks basic system information and system health.
+Server logs contain important information about the activity and health of a server.
 
-The application collects CPU, memory, and disk usage information and displays the current health status of the system.
+The **Server Log Monitor** reads a server log file and allows users to analyze log entries through a simple command-line interface.
 
-The project is also containerized using Docker and includes a GitHub Actions CI workflow for automated validation.
+The project is designed to demonstrate how Python can be used to automate basic server-log monitoring tasks.
 
 ---
 
-## 🎯 Project Objectives
+## 🎯 Objectives
 
 The main objectives of this project are:
 
-- Monitor basic system resources
-- Display operating system information
-- Monitor CPU usage
-- Monitor memory usage
-- Monitor disk usage
-- Classify system health status
+- Read server log files using Python
+- Process and analyze log entries
+- Identify different types of log messages
+- Search and inspect log information
+- Display useful monitoring information
+- Practice Python file handling
+- Use Git and GitHub for version control
 - Containerize the application using Docker
-- Automate validation using GitHub Actions
-- Practice Git and GitHub workflows
-
----
-
-## 🛠️ Technologies Used
-
-- Python 3
-- psutil
-- Docker
-- Git
-- GitHub
-- GitHub Actions
-- Linux
-- PowerShell / Windows Terminal
+- Automate project checks using GitHub Actions
 
 ---
 
 ## ✨ Features
 
-### 1. System Information
+### 1. 📄 Server Log File Processing
 
-Displays basic information about the operating system, including:
+The application reads information from a server log file and processes the available log entries.
 
-- Operating system name
-- Operating system version
-- Processor information
+### 2. 🔍 Log Analysis
 
-### 2. System Health Check
+The application analyzes log information to help understand server activity and identify important log messages.
 
-The application checks:
+### 3. 🖥️ Command-Line Interface
 
-- CPU usage
-- Memory usage
-- Disk usage
+The project provides a simple command-line interface that allows users to interact with the monitoring application.
 
-The resource usage is classified into health levels such as:
+### 4. 📊 Log Monitoring
 
-- NORMAL
-- WARNING
-- CRITICAL
+The application can be used to inspect server log information and identify relevant events from the log file.
 
-### 3. Command-Line Interface
+### 5. 🐳 Docker Support
 
-The application provides a simple menu-driven interface:
+The application is containerized using Docker so that it can run in an isolated and reproducible environment.
+
+### 6. ⚙️ GitHub Actions CI
+
+GitHub Actions is configured to automatically run the project's CI workflow whenever changes are pushed to GitHub.
+
+---
+
+## 🛠️ Technologies Used
+
+- **Python 3**
+- **Docker**
+- **Git**
+- **GitHub**
+- **GitHub Actions**
+- **PowerShell / Command Line**
+
+---
+
+## 📂 Project Structure
 
 ```text
-===== SYSTEM HEALTH MONITOR =====
-
-1. System Information
-2. Check System Health
-3. Exit
-
-4. Docker Support
-
-The application can be packaged and executed inside a Docker container.
-
-5. GitHub Actions CI
-
-GitHub Actions automatically validates the project whenever changes are pushed to the repository.
-
-The CI workflow performs automated checks and builds the Docker image.
-
-📁 Project Structure
-System-Health-Monitor
+Server-Log-Monitor/
 │
-├── .github
-│   └── workflows
+├── .github/
+│   └── workflows/
 │       └── ci.yml
 │
 ├── .gitignore
 ├── Dockerfile
+├── README.md
 ├── main.py
-└── README.md
+└── server.log
+
 🐍 Python Implementation
 
-The application uses the psutil Python library to retrieve system resource information.
+The application is developed using Python.
 
-The project demonstrates:
+The project demonstrates concepts such as:
 
-Python functions
+Variables
+Functions
 Conditional statements
+Loops
+File handling
+String processing
 User input
-System information retrieval
-Resource monitoring
+Command-line interaction
 Exception handling
-Menu-driven applications
-🐳 Docker
+📄 Server Log File
 
-The application is containerized using Docker.
+The project uses a server.log file as the source of log information.
 
-Build the Docker image
-docker build -t system-health-monitor .
-Run the Docker container
-docker run --rm system-health-monitor
+The log file contains server activity that can be processed by the Python application.
 
-Docker provides an isolated environment in which the Python monitoring application can run.
+Example log entries:
 
-🔄 GitHub Actions CI
+INFO Server started successfully
+INFO User request received
+WARNING High memory usage detected
+ERROR Database connection failed
+INFO Server running normally
+🚀 How to Run the Project Locally
+Step 1: Clone the Repository
+git clone https://github.com/shreyaCloud-tech/Server-Log-Monitor.git
+Step 2: Navigate to the Project
+cd Server-Log-Monitor
+Step 3: Run the Python Application
+python main.py
+🐳 Running with Docker
 
-This project includes a GitHub Actions workflow located at:
+Docker is used to package the application and its required files into a container.
 
-.github/workflows/ci.yml
+Build the Docker Image
+docker build -t server-log-monitor .
+Run the Docker Container
+docker run --rm server-log-monitor
 
-The workflow is designed to automatically validate the project when code is pushed to the main branch.
+The Docker image contains:
 
-The CI process includes:
+Python runtime
+Application code
+Server log file
+Required project configuration
+🔄 Git Workflow
 
-Checking out the repository
-Setting up Python
-Installing required dependencies
-Validating the Python application
-Building the Docker image
+Git is used to track changes to the project.
 
-A successful workflow run confirms that the project passes the automated CI checks.
+Basic workflow:
 
-📊 System Monitoring Concepts
+git status
+git add .
+git commit -m "Update Server Log Monitor"
+git push
 
-This project demonstrates basic monitoring concepts such as:
+The project is maintained using a GitHub repository.
 
-CPU Monitoring
+⚙️ GitHub Actions
 
-Measures the percentage of CPU currently being utilized.
+The project includes a GitHub Actions workflow:
 
-Memory Monitoring
+.github/
+└── workflows/
+    └── ci.yml
 
-Measures the percentage of system memory being used.
+The CI workflow automatically runs when changes are pushed to the repository.
 
-Disk Monitoring
+This helps ensure that the project can be checked automatically instead of relying only on manual testing.
 
-Measures the percentage of disk space being utilized.
+CI Pipeline
 
-Health Classification
+The workflow performs automated project checks using GitHub Actions.
 
-The collected resource values can be used to identify whether the system is operating normally or experiencing high resource usage.
+Developer
+    ↓
+Git Commit
+    ↓
+Git Push
+    ↓
+GitHub Repository
+    ↓
+GitHub Actions
+    ↓
+Python CI
+    ↓
+Successful Workflow
+🐳 Docker Workflow
 
+The complete Docker workflow is:
+
+Python Application
+       ↓
+   Dockerfile
+       ↓
+ docker build
+       ↓
+ Docker Image
+       ↓
+ docker run
+       ↓
+Running Container
 🧪 Testing
 
 The application was tested locally using Python and Docker.
 
-Python execution:
-
+Python
 python main.py
+Docker
+docker build -t server-log-monitor .
+docker run --rm server-log-monitor
 
-Docker execution:
-
-docker build -t system-health-monitor .
-docker run --rm system-health-monitor
-
-The application successfully displays system information and performs system health checks.
+The Docker image builds successfully and the container can be started successfully.
 
 📚 What I Learned
 
-Through this project, I learned how to:
+Through this project, I practiced:
 
-Build a Python-based system monitoring application
-Use the psutil library
-Retrieve CPU, memory, disk, and OS information
-Create a menu-driven command-line application
-Work with Dockerfiles
-Build and run Docker containers
-Use Git for version control
-Push projects to GitHub
-Create GitHub Actions workflows
-Implement Continuous Integration
-Understand basic system monitoring concepts
-🚀 Future Improvements
-
-Possible improvements for this project include:
-
-Add continuous real-time monitoring
-Add configurable CPU thresholds
-Add configurable memory thresholds
-Add configurable disk thresholds
-Save monitoring results to a log file
-Generate system health reports
-Add email alerts
-Add notification support
-Monitor network usage
-Monitor network speed
-Add CPU temperature monitoring
-Monitor running processes
-Create a graphical user interface
-Integrate Prometheus
-Create Grafana dashboards
-Deploy the monitoring application to a cloud environment
-Run the monitoring service using Kubernetes
+Python programming
+File handling
+Reading and processing log files
+Command-line applications
+Basic server log monitoring concepts
+Git version control
+GitHub repositories
+Git branching
+Git commits and pushes
+Dockerfile creation
+Docker image building
+Docker containers
+GitHub Actions
+Continuous Integration (CI)
+Project documentation using Markdown
 ☁️ Cloud & DevOps Relevance
 
-This project demonstrates several skills relevant to Cloud and DevOps engineering:
+This project is related to Cloud and DevOps because server-log monitoring is an important part of understanding application and infrastructure behavior.
 
-Linux system monitoring
-Python automation
-Docker containerization
-Git version control
-GitHub repository management
-Continuous Integration
-GitHub Actions
-Basic infrastructure monitoring concepts
+The project also demonstrates several DevOps practices:
 
-The project can be further extended using monitoring technologies such as Prometheus and Grafana.
+Version Control: Git and GitHub
+Containerization: Docker
+Continuous Integration: GitHub Actions
+Automation: CI workflow
+Documentation: Markdown
 
-👩‍💻 Author
+These concepts form part of a practical Cloud & DevOps workflow.
 
-Salla Shreya
+🔮 Future Improvements
 
+Possible improvements for the project include:
+
+Add real-time log monitoring
+Monitor logs continuously
+Add configurable log-level filtering
+Add error and warning counters
+Generate monitoring reports
+Save monitoring results to a separate file
+Add timestamp-based filtering
+Add network monitoring
+Add email or notification alerts
+Add a web-based dashboard
+Integrate the project with cloud monitoring services
+Deploy the application to a cloud environment
+Improve the Docker deployment workflow
 📌 Project Status
 
 Completed
 
-The current version provides basic system information and system health monitoring with Docker containerization and GitHub Actions CI.
+The project currently includes:
 
-Skills Demonstrated
-Python
-Linux
-System Monitoring
-psutil
-Docker
-Git
-GitHub
-GitHub Actions
-Continuous Integration
-DevOps Fundamentals
-Cloud & Infrastructure Monitoring
+✅ Python application
+✅ Server log file
+✅ README documentation
+✅ .gitignore
+✅ Dockerfile
+✅ Docker image build
+✅ Docker container execution
+✅ Git repository
+✅ GitHub repository
+✅ GitHub Actions CI
+👩‍💻 Author
+
+Salla Shreya
+
+⭐ Conclusion
+
+The Server Log Monitor project demonstrates how Python can be combined with Docker, GitHub, and GitHub Actions to create a simple but practical monitoring application.
+
+It provides hands-on experience with Python development, containerization, version control, and Continuous Integration, making it a useful project for building a Cloud & DevOps portfolio.
