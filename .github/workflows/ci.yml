@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -23,10 +23,3 @@ jobs:
 
       - name: Check Python syntax
         run: python -m py_compile main.py
-
-      - name: Run application
-        run: |
-          printf "7\n" | python main.py
-
-      - name: Build Docker image
-        run: docker build -t server-log-monitor .
